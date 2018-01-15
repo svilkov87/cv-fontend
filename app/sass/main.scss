@@ -1,0 +1,239 @@
+@import 'base/variables';
+@import 'base/settings';
+@import 'base/mixins';
+@import 'base/reset';
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+//loader
+#loading {
+  margin: 0;
+  padding: 0;
+  background-color: #376dac;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  #loading-center {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    #loading-center-absolute {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      height: 200px;
+      width: 200px;
+      margin-top: -100px;
+      margin-left: -100px;
+      #object {
+        width: 80px;
+        height: 80px;
+        background-color: #FFF;
+        -webkit-animation: animate 1s infinite ease-in-out;
+        animation: animate 1s infinite ease-in-out;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 60px;
+      }
+    }
+  }
+  @-webkit-keyframes animate {
+    0% {
+      -webkit-transform: perspective(160px);
+    }
+    50% {
+      -webkit-transform: perspective(160px) rotateY(-180deg);
+    }
+    100% {
+      -webkit-transform: perspective(160px) rotateY(-180deg) rotateX(-180deg);
+    }
+  }
+
+  @keyframes animate {
+    0% {
+      transform: perspective(160px) rotateX(0deg) rotateY(0deg);
+      -webkit-transform: perspective(160px) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+      transform: perspective(160px) rotateX(-180deg) rotateY(0deg);
+      -webkit-transform: perspective(160px) rotateX(-180deg) rotateY(0deg);
+    }
+    100% {
+      transform: perspective(160px) rotateX(-180deg) rotateY(-180deg);
+      -webkit-transform: perspective(160px) rotateX(-180deg) rotateY(-180deg);
+    }
+  }
+}
+//кнопка наверх
+#top{
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: #85afff;
+  color: #fff;
+  display: none;
+  padding: 15px;
+  @include bradius(50%);
+}
+#menu_toggle {
+  display: none;
+  color: #fff;
+  top: 10px;
+  left: 10px;
+  background: #5aa7ff;
+  padding: 10px;
+  z-index: 9;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.side_menu{
+  position: fixed;
+  width: 280px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
+  .side_top {
+    position: relative;
+    margin-bottom: 20px;
+    #show_side {
+      color: #fff;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: none;
+    }
+  }
+  .head_items{
+    width: 100%;
+    padding: 25px;
+    .image_profile{
+      margin: 0 auto;
+      display: block;
+      width: 150px;
+      margin-bottom: 25px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      cursor: pointer;
+      @include filter_grayscale(.9);
+      @include transition(.2s);
+      &:hover{
+        @include filter_grayscale(0);
+      }
+    }
+    .block_name_proff{
+      text-align: right;
+      .name{
+        color: #fff;
+        margin-bottom: 10px;
+      }
+      .proff{
+        color: #787474;
+      }
+    }
+  }
+  .side_list {
+    .ul_side {
+      .li_side {
+        text-align: right;
+        position: relative;
+        a {
+          display: block;
+          padding: 15px 25px;
+          color: #fff;
+          text-decoration: none;
+          @include transition($default);
+          &:hover {
+            background: #fff;
+            color: #000!important;
+          }
+        }
+        .active {
+          color: #fff;
+          padding-right: 45px;
+          &:hover::after {
+            border: 1px solid #000!important;
+          }
+          &:after {
+            content: "";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border: 2px solid #fff;
+            @include bradius(50%);
+            @include transition($default);
+          }
+        }
+      }
+      .write_me {
+
+      }
+    }
+  }
+}
+#head{
+  margin-left: 280px;
+  height: 650px;
+  display: flex;
+  justify-content: center; /*Центрирование по горизонтали*/
+  align-items: center;     /*Центрирование по вертикали */
+  position: relative;
+  background: linear-gradient(180deg,rgba(13,13,13,.47) 0,rgba(13,13,13,.80) 0), url(../img/startup-593334_1920.jpg) no-repeat fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  @include transition($default);
+  .head_block {
+    margin: -50px 0 0 0;
+    text-align: center;
+    .head_header {
+      h4 {
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 30px;
+      }
+      p {
+        color: #fff;
+        font-size: 25px;
+      }
+      .button_go {
+        padding: $padding_default;
+        background: $alter_bg;
+        display: inline-block;
+        margin-top: 20px;
+        cursor: pointer;
+        @include transition($default);
+        &:hover {
+          animation: move .6s ease;
+          @keyframes move {
+            20% {
+              margin-top: 80px;
+            }
+            95% {
+              margin-top: 70px;
+            }
+          }
+        }
+        .go_about {
+
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
