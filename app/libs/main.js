@@ -16,20 +16,11 @@ $(document).ready(function(){
 
         // console.log(st);
         $("#head").css({
-          "filter": "grayscale(" + st / 100 + ")"
+          "filter": "grayscale(" + st / 50 + ")"
           // "bottom" : "translate3d(0px, " + st/ 100  + "%, .01px)"
           // "-webkit-transform" : "translate3d(0px, " + st/ 100  + "%, .01px)"
         });
     });
-
-    //параллакс фона
-    // $(window).scroll(function () {
-    //     var movement = -parseInt($(this).scrollTop() / 3);
-    //     $('#head').css({
-    //         backgroundPosition: 'center ' + movement + 'px'
-    //     });
-    // });
-
 
     //протфолио показать подробности
     $(".sb_more").click(function() {
