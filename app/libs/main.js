@@ -1,31 +1,31 @@
-
-// loader start
-// loader end
-
-$(document).ready(function(){
+$(document).ready( function() {
 
     //loader
-     $(window).load(function() {
-     $("#object").fadeOut();
-     $("#loading").delay(100).fadeOut("slow");
-     });
+     $(window).load( function() {
+         $("#object").fadeOut();
+         $("#loading").delay(100).fadeOut("slow");
+     } );
 
     // серый фон при скролле
-    $(window).scroll(function () {
-        var st = $(this).scrollTop();
+    $(window).scroll( function () {
 
-        // console.log(st);
-        $("#head").css({
-          "filter": "grayscale(" + st / 50 + ")"
-          // "bottom" : "translate3d(0px, " + st/ 100  + "%, .01px)"
-          // "-webkit-transform" : "translate3d(0px, " + st/ 100  + "%, .01px)"
-        });
-    });
+        var st = $( this ).scrollTop();
+
+        $("#head")
+            .css({
+                "filter": "grayscale(" + st / 50 + ")"
+                  // "bottom" : "translate3d(0px, " + st/ 100  + "%, .01px)"
+                  // "-webkit-transform" : "translate3d(0px, " + st/ 100  + "%, .01px)"
+            } );
+    } );
 
     //протфолио показать подробности
-    $(".sb_more").click(function() {
-        $(this).toggleClass('burger');
-        $(this).prev(".second_blcok").toggleClass('active');
+    $('.sb_more').click( function() {
+        $( this )
+            .toggleClass('burger');
+        $( this )
+            .prev(".second_blcok")
+            .toggleClass('active');
     });
 
     //скролл side главная страница
@@ -58,16 +58,6 @@ $(document).ready(function(){
         // анимируем переход к блоку, время: 800 мс
         $('body,html').animate({scrollTop: top}, 800);
     });
-
-
-
-
-
-// выпадающее меню
-  $("#justify_nav").click(function(){
-    $(".menu").fadeToggle(500);
-  });
-
 
     //написать мне
     $(".write_me").click(function () {
@@ -120,46 +110,39 @@ $(document).ready(function(){
     });
 
     //Плавный скролл до блока .div по клику на .scroll
-  //Документация: https://github.com/flesler/jquery.scrollTo
-  $(".button_go").click(function() {
-    $.scrollTo($("#about_me"), 800, {
-      offset: 0
+    //Документация: https://github.com/flesler/jquery.scrollTo
+    $('.button_go').on('click', function() {
+
+        var $aboutMePosition = $('#about_me')
+            .offset()
+            .top;
+
+        $('body,html')
+            .animate({
+                scrollTop: $aboutMePosition
+            }, 300);
+
     });
-  });
 
-
-
-  // показать кнопку наверх
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 250){
-      $('#top').fadeIn(100);
-    }
-    else{
-      $('#top').fadeOut(100);
-    }
-  });
-
-
-
-  //Кнопка "Наверх"
-  //Документация:
-  //http://api.jquery.com/scrolltop/
-  //http://api.jquery.com/animate/
-  $("#top").click(function () {
-    $("body, html").animate({
-      scrollTop: 0
-    }, 800);
-    return false;
-  });
-
-    //фиксированный нав
+    // показать кнопку наверх
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 150){
-            $('.nav').addClass("fixed");
+        if ($(this).scrollTop() > 250){
+          $('#top').fadeIn(100);
         }
         else{
-            $('.nav').removeClass("fixed");
+          $('#top').fadeOut(100);
         }
+    });
+
+    //Кнопка "Наверх"
+    //Документация:
+    //http://api.jquery.com/scrolltop/
+    //http://api.jquery.com/animate/
+    $("#top").click(function () {
+        $("body, html").animate({
+          scrollTop: 0
+        }, 800);
+        return false;
     });
 
     //показать менб слева
@@ -168,5 +151,18 @@ $(document).ready(function(){
         $('.side_menu').toggleClass('sleft');
         $('.main').toggleClass('on');
     });
-});
+
+    //photocard
+    $('.ui-quadro-center').mouseenter( function(){
+        var $photocard = $('.ui-photocard');
+                setTimeout(function () {
+                    $photocard.addClass('active_photocard');
+                }, 1000),
+                setTimeout(function () {
+                    $photocard.removeClass('active_photocard');
+                }, 1500)
+
+    } );
+
+} );
 

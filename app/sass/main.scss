@@ -213,20 +213,21 @@ body{
         cursor: pointer;
         @include transition($default);
         &:hover {
-          animation: move .3s ease;
-          @keyframes move {
-            20% {
-              background: $alter_bg_hover;
-              border: 3px solid #fff;
-            }
-            95% {
-              background: $alter_bg;
-            }
-          }
+          background: $alter_bg_hover;
+          border-color: $alter_bg_hover;
         }
       }
-      .go_about {
-
+      .go_acive {
+        animation: move .3s ease;
+        @keyframes move {
+          20% {
+            background: $acid_bg;
+            border: 3px solid #fff;
+          }
+          95% {
+            background: $alter_bg;
+          }
+        }
       }
     }
   }
@@ -490,6 +491,30 @@ body{
     }
   }
 }
+
+
+//protocard
+.ui-photocard {
+  height: 300px;
+  width: 300px;
+  opacity: 0;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  right: 50%;
+  border: 10px solid #fff;
+  background: url(../img/Cute-Girlnbspfond-ecran-hd3.jpg) no-repeat;
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+  @include transition($default);
+  filter: sepia(100%);
+}
+.active_photocard {
+  top: 25%;
+  opacity: 1;
+}
+
 
 
 
