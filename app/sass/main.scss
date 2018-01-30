@@ -281,10 +281,10 @@ body{
     &:after {
       content: '';
       position: absolute;
-      top: 20px;
+      top: 13px;
       right: 20px;
-      height: 10px;
-      width: 10px;
+      height: 20px;
+      width: 20px;
       background: #ccc;
       border-radius: 50%;
     }
@@ -293,7 +293,7 @@ body{
       border-radius: 50%;
     }
     &:hover {
-      box-shadow: 0 0 9px 0 rgba(81,156,253,.49);
+      box-shadow: 0 0 9px 0 rgba(81,156,253,.35);
     }
     &:hover .skills_wrapp {
       top: 0;
@@ -384,109 +384,175 @@ body{
           filter: grayscale(1);
           // filter: sepia(100%);
           // filter: saturate(150%);
-        }
-          &__top-shadow {
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            height: 300px;
-            width: 100%;
-            background: #000;
-            @include transition(.3s);
-          }
-          &__right-shadow {
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            height: 300px;
-            width: 100%;
-            background: #000;
-            @include transition(.3s);
-          }
-          &__bottom-shadow {
-            opacity: 0;
-            position: absolute;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            height: 300px;
-            width: 100%;
-            background: #000;
-            @include transition(.3s);
-          }
-          &__left-shadow {
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            height: 300px;
-            width: 100%;
-            background: #000;
-            transition: .3s ease;
-          }
-          &__center {
-            opacity: 0;
-            position: absolute;
-            left: 25%;
-            top: 25%;
-            width: 50%;
-            height: 50%;
-            border: 7px solid rgba(255, 255, 255, .8);
-            transform: scale(.8);
-            @include transition(.3s);
-          }
-          &:hover .ui-quadro-center__center {
-            opacity: 1;
-            transform: scale(1);
-            animation: borders .5s;
-            animation-iteration-count: 2;
-            @keyframes borders {
-              0% {
-                border: 7px solid rgba(255, 255, 255, .4);
-              }
-              25% {
-                border: 7px solid rgba(255, 255, 255, .6);
-                transform: scale(1.1);
-              }
-              50% {
-                border: 7px solid rgba(255, 255, 255, .8);
-              }
-              75% {
-                border: 7px solid rgba(255, 255, 255, 1);
-              }
-              100% {
-                border: 7px solid rgba(255, 255, 255, 1);
-              }
+          animation: bg_flash .5s;
+          animation-iteration-count: 2;
+          @keyframes bg_flash {
+            0% {
+              filter: opacity(100%);
+            }
+            25% {
+              // background: #fff;
+              filter: opacity(30%);
+              transform: scale(.99);
             }
           }
-          &:hover .ui-quadro-center__top-shadow {
-            opacity: .7;
-            top: -95%;
+        }
+        &__top-shadow {
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          height: 300px;
+          width: 100%;
+          background: #000;
+          @include transition(.3s);
+        }
+        &__right-shadow {
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          height: 300px;
+          width: 100%;
+          background: #000;
+          @include transition(.3s);
+        }
+        &__bottom-shadow {
+          opacity: 0;
+          position: absolute;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          height: 300px;
+          width: 100%;
+          background: #000;
+          @include transition(.3s);
+        }
+        &__left-shadow {
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          height: 300px;
+          width: 100%;
+          background: #000;
+          transition: .3s ease;
+        }
+        &__center {
+          opacity: 0;
+          position: absolute;
+          left: 25%;
+          top: 25%;
+          width: 50%;
+          height: 50%;
+          border: 7px solid rgba(255, 255, 255, .8);
+          transform: scale(.8);
+          @include transition(.3s);
+        }
+        &:hover .ui-quadro-center__center {
+          opacity: 1;
+          transform: scale(1);
+          animation: borders .5s;
+          animation-iteration-count: 2;
+          @keyframes borders {
+            0% {
+              border: 7px solid rgba(255, 255, 255, .4);
+            }
+            25% {
+              border: 7px solid rgba(255, 255, 255, .6);
+              transform: scale(1.1);
+            }
+            50% {
+              border: 7px solid rgba(255, 255, 255, .8);
+            }
+            75% {
+              border: 7px solid rgba(255, 255, 255, 1);
+            }
+            100% {
+              border: 7px solid rgba(255, 255, 255, 1);
+            }
           }
-          &:hover .ui-quadro-center__right-shadow {
-            opacity: .7;
-            right: 95%;
-          }
-          &:hover .ui-quadro-center__bottom-shadow {
-            opacity: .7;
-            bottom: -95%;
-          }
-          &:hover .ui-quadro-center__left-shadow {
-            opacity: .7;
-            left: 95%;
-          }
+        }
+        &:hover .ui-quadro-center__top-shadow {
+          opacity: .7;
+          top: -95%;
+        }
+        &:hover .ui-quadro-center__right-shadow {
+          opacity: .7;
+          right: 95%;
+        }
+        &:hover .ui-quadro-center__bottom-shadow {
+          opacity: .7;
+          bottom: -95%;
+        }
+        &:hover .ui-quadro-center__left-shadow {
+          opacity: .7;
+          left: 95%;
+        }
       }
-      .ui-opacity__wrapper_one {
-        @extend .ui-quadro-center;
+      .ui-grid-effect {
+        height: 300px;
+        text-align: center;
+        position: relative;
+        background: url(../img/Cute-Girlnbspfond-ecran-hd3.jpg) no-repeat;
+        background-size: cover;
+        background-position: center center;
+        overflow: hidden;
+        &:hover .ui-grid-bg {
+          opacity: .5;
+        }
+        &:hover .ui_grid_header {
+          top: 55px;
+          opacity: 1;
+        }
+        &:hover .ui_grid_description {
+         transform: scale(.9);
+          opacity: 1;
+        }
+        .ui-grid-bg {
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: -webkit-linear-gradient(bottom left, rgb(0, 0, 0) 0%, #05abe0 100%);
+          background: -o-linear-gradient(bottom left, rgb(0, 0, 0) 0%, #05abe0 100%);
+          background: linear-gradient(to top right, rgb(0, 0, 0) 0%, #05abe0 100%);
+          transition: all .2s ease-in-out;
+          text-align: center;
+        }
+        .ui_grid_header {
+          color: #fff;
+          opacity: 0;
+          position: absolute;
+          top: 25px;
+          text-align: center;
+          text-transform: uppercase;
+          bottom: 0;
+          font-size: 24px;
+          left: 0;
+          right: 0;
+          transition: all .2s ease-in-out;
+        }
+        .ui_grid_description {
+          color: #fff;
+          transform: scale(1.1);
+          opacity: 0;
+          border: 2px solid #fff;
+          display: inline-block;
+          margin-top: 130px;
+          padding: 10px;
+          font-size: 24px;
+          transition: all .2s ease-in-out;
+        }
       }
       .ui-opacity__wrapper_two {
-        @extend .ui-quadro-center;
+
       }
     }
   }
@@ -495,38 +561,29 @@ body{
 
 //protocard
 .ui-photocard {
-  height: 300px;
-  width: 300px;
+  height: 350px;
+  min-width: 300px;
   opacity: 0;
   position: fixed;
-  top: 20%;
-  left: 50%;
-  right: 50%;
+  top: -350px;
+  left: 40%;
+  margin: 0 auto;
   border: 10px solid #fff;
   background: url(../img/Cute-Girlnbspfond-ecran-hd3.jpg) no-repeat;
   background-size: cover;
   background-position: center center;
   overflow: hidden;
+  @include bsh(0px 0px 20px 0px rgba(0, 0, 0, 0.75));
   @include transition($default);
   filter: sepia(100%);
+  &__header {
+    padding: 10px 0;
+    background: #fff;
+    font-size: 24px;
+  }
 }
 .active_photocard {
-  top: 25%;
+  top: 20px;
   opacity: 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

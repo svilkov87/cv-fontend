@@ -154,13 +154,18 @@ $(document).ready( function() {
 
     //photocard
     $('.ui-quadro-center').mouseenter( function(){
-        var $photocard = $('.ui-photocard');
+        var $photocard = $('.ui-photocard'),
+            $widthQuadroCenter = $( this ).width();
+
+            console.log($widthQuadroCenter);
+
                 setTimeout(function () {
                     $photocard.addClass('active_photocard');
+                    $photocard.width($widthQuadroCenter);
                 }, 1000),
                 setTimeout(function () {
                     $photocard.removeClass('active_photocard');
-                }, 1500)
+                }, 2500)
 
     } );
 
