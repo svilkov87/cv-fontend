@@ -152,12 +152,93 @@ $(document).ready( function() {
         $('.main').toggleClass('on');
     });
 
+
+    //ui
+    //menu toggl
+    //
+    //four
+
+    $('.ui-menu__toggle_four').on( 'click', function() {
+        $( this ).toggleClass('active_toggle');
+        $( '.ui-menu__drop_four' ).toggleClass('drop_four_active');
+    } );
+
+    $('.ui-menu__li').hover(
+        function () {
+            $(this).children('.ui-menu__ul-child').fadeIn(150);
+        },
+        function () {
+            $(this).children('.ui-menu__ul-child').fadeOut(150);
+        }
+    );
+
+    //five
+
+    $('.ui-menu__toggle_five').on( 'click', function() {
+        $( this ).toggleClass('active_toggle');
+        $( '.ui-menu__drop_five' ).toggleClass('drop_five_active');
+
+        var $liFiveItems = $('.ui-menu__drop_five')
+                .find('.ui-menu__li');
+
+        $liFiveItems.each(function () {
+
+            var sideData  = $( this ).data('side'),
+                listItems = $( this ),
+                liWrapp   = $( this ).find('.ui-menu__li-wrapp'),
+                delayData = $( this ).data('delay');
+
+            // console.log( delayData );
+
+            setTimeout(function () {
+                listItems.toggleClass('ui-menu__li-active');
+                liWrapp.toggleClass(sideData);
+            }, delayData + '00' );
+
+        } );
+
+    } );
+
+    var $FiveItems = $('.ui-menu__drop_five').find('.ui-menu__li');
+
+    $FiveItems.hover(
+        function () {
+
+            var $nextItems = $( this ).nextAll();
+
+            for (var i = 0; i < $nextItems.length; i++) {
+
+                $nextItems.attr( 'data-position', [i] );
+
+                // console.log([i]);
+            }
+            console.log($nextItems);
+
+            // var i = 1;
+            // $( this ).nextAll().each( function(i,e){
+            //   $( e ).attr( 'data-position', i++ );
+            // } );
+
+            // $( this ).prevAll().each( function(i,e){
+            //   $( e ).attr( 'data-position', i++ );
+            // } );
+
+            $FiveItems.not($(this)).addClass('wave');
+        },
+        function () {
+            // $( this ).removeAttr('data-position', '0');
+
+            $FiveItems.not($(this)).removeClass('wave');
+        }
+    );
+
+
     //photocard
     $('.ui-quadro-center').mouseenter( function(){
         var $photocard = $('.ui-photocard'),
             $widthQuadroCenter = $( this ).width();
 
-            console.log($widthQuadroCenter);
+            // console.log($widthQuadroCenter);
 
                 setTimeout(function () {
                     $photocard.addClass('active_photocard');
