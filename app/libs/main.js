@@ -154,8 +154,23 @@ $(document).ready( function() {
 
 
     //ui
-    //menu toggl
+    //menu toggle
     //
+    //
+
+    $('.ui-menu__action').hover(
+        function () {
+
+            var $parent     = $( this ).parents('.ui-menu__wrapper'),
+                $annotation = $parent.find('.ui-menu__annotation').addClass('show');
+        },
+        function () {
+
+            var $parent     = $(this).parents('.ui-menu__wrapper'),
+                $annotation = $parent.find('.ui-menu__annotation').removeClass('show');
+        }
+    );
+
     //four
 
     $('.ui-menu__toggle_four').on( 'click', function() {
@@ -204,33 +219,131 @@ $(document).ready( function() {
     $FiveItems.hover(
         function () {
 
-            var $nextItems = $( this ).nextAll();
-
-            for (var i = 0; i < $nextItems.length; i++) {
-
-                $nextItems.attr( 'data-position', [i] );
-
-                // console.log([i]);
-            }
-            console.log($nextItems);
-
-            // var i = 1;
-            // $( this ).nextAll().each( function(i,e){
-            //   $( e ).attr( 'data-position', i++ );
-            // } );
-
-            // $( this ).prevAll().each( function(i,e){
-            //   $( e ).attr( 'data-position', i++ );
-            // } );
-
+            $(this).prev().addClass('previous');
+            $(this).next().addClass('next');
             $FiveItems.not($(this)).addClass('wave');
         },
         function () {
-            // $( this ).removeAttr('data-position', '0');
 
+            // var $this = $(this);
+            // setTimeout( function(){
+            //     $this.next().removeClass('next');
+            //     $this.prev().removeClass('previous');
+            //     // $FiveItems.not($(this)).removeClass('wave');
+            // }, 100);
+
+            $(this).next().removeClass('next');
+            $(this).prev().removeClass('previous');
             $FiveItems.not($(this)).removeClass('wave');
         }
     );
+
+    $FiveItems.on( 'click', function(){
+        $( this ).toggleClass('fixed');
+    } );
+
+    // six
+
+    resultDisplayArray = [];
+
+    function pushToResultTable(par) {
+
+        $('.ui-menu__result-table').show();
+        for ( var i = 0; i < resultDisplayArray.length; i++) {
+            $('.ui-menu__result-description').text(resultDisplayArray[i]);
+        }
+        if (par !== undefined) {
+            $('.ui-menu__result-table > .ui-menu__result-header').text(par);
+        }
+        resultDisplayArray = [];
+    }
+
+    $('.ui-menu__toggle_six').on( 'click', function() {
+
+        pushToResultTable('Меню активированно');
+
+        $( this ).toggleClass('active_toggle');
+        $( '.ui-menu__drop_six' ).toggleClass('drop_six_active');
+
+        var $liFiveItems = $('.ui-menu__drop_six')
+                .find('.ui-menu__li');
+
+        $liFiveItems.each(function () {
+
+            var sideData  = $( this ).data('side'),
+                listItems = $( this ),
+                liWrapp   = $( this ).find('.ui-menu__li-wrapp'),
+                delayData = $( this ).data('delay');
+
+            // console.log( delayData );
+
+            setTimeout(function () {
+                listItems.toggleClass('ui-menu__li-active');
+                liWrapp.toggleClass(sideData);
+            }, delayData + '00' );
+
+        } );
+
+    } );
+
+    var $sixItems = $('.ui-menu__drop_six').find('.ui-menu__li');
+
+    $('.ui-menu__drop_six').hover(
+        function () {
+
+        // resultDisplayArray.push('Установлен hover-эффект');
+        pushToResultTable('Hover-эффект используется');
+        },
+        function () {
+
+        pushToResultTable('Hover-эффект снят');
+        }
+    );
+
+    $sixItems.hover(
+        function () {
+
+        $itemNumber = 'Наведение на пункт ' + $( this ).html();
+
+        resultDisplayArray.push($itemNumber);
+        pushToResultTable();
+
+        console.log($itemNumber);
+
+            $(this).prev().addClass('previous');
+            $(this).next().addClass('next');
+            $sixItems.not($(this)).addClass('wave');
+        },
+        function () {
+
+            $(this).next().removeClass('next');
+            $(this).prev().removeClass('previous');
+            $sixItems.not($(this)).removeClass('wave');
+        }
+    );
+
+    $sixItems.on( 'click', function(){
+
+        // resultDisplayArray.push('Меню активировано');
+
+        $( this ).toggleClass('fixed');
+
+        $chosenItem  = 'Выбран пункт ' + $( this ).html();
+        // $detetedItem = 'Удален пункт ' + $( this ).html();
+
+        // if( $( this ).hasClass('fixed') ) {
+            resultDisplayArray.push($chosenItem);
+            pushToResultTable();
+        // }else {
+            // resultDisplayArray.push($detetedItem);
+        // }
+
+        var $parentItems   = $(this).parent('.ui-menu__ul'),
+            $resultDisplay = $parentItems.prev('.ui-menu__result-table');
+
+            $resultDisplay.addClass('show');
+
+    } );
 
 
     //photocard
