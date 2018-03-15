@@ -618,9 +618,10 @@ body{
         }
       }
     }
-
     //ui dropdown menu
     .ui-menu {
+      overflow: hidden;
+      min-height: 510px;
       .ui-menu__wrapper {
         height: 320px;
         background: #fcfcfc;
@@ -1139,6 +1140,129 @@ body{
           opacity: 1;
           transform: translateY(0);
           visibility: visible;
+        }
+      }
+    }
+    .ui-buttons {
+      .ui-buttons__header{
+        text-align: center;
+        margin: 0;
+        position: relative;
+        padding: 0 10px;
+        margin: 45px 25px;
+        font-size: 30px;
+        text-transform: uppercase;
+      }
+      .button-sev{
+        position: relative;
+        display: block;
+        height: 60px;
+        width: 230px;
+        margin: 0 auto;
+        color: #fff;
+        cursor: pointer;
+        text-align: center;
+        float: right;
+        overflow: hidden;
+        .button-sev__hide {
+          line-height: 60px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: $alter_bg;
+          transition: $default ease-in-out;
+          &::after {
+            content: 'Button';
+            line-height: 60px;
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $alter_bg_hover;
+            transition: $default ease-in-out;
+          }
+        }
+        &:hover .button-sev__hide{
+          top: 100%;
+        }
+
+        &:hover .button-sev__senter{
+          animation: bubble .6s ease-in-out;
+          -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+          // animation-delay: .1s;
+          animation-duration: .6s;
+        }
+        .button-sev__senter{
+          opacity: 0;
+          position: absolute;
+          left: 39%;
+          top: 8%;
+          background: transparent;
+          border: 3px solid #fff;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          color: #000;
+          line-height: 45px;
+          transform: scale(.5);
+          @keyframes bubble {
+            0{
+              background: rgba(255, 69, 0, 0.9);
+            }
+            25% {
+              transform: scale(1.8);
+
+            }
+            50% {
+              transform: scale(.95);
+            }
+            100% {
+              background: #fff;
+              transform: scale(1);
+              width: 96%;
+              border-radius: 3px;
+              left: 5px;
+              top: 5px;
+              right: 10px;
+              bottom: 5px;
+            }
+          }
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+      .button_ei {
+        float: left;
+        background: $alter_bg;
+        display: block;
+        line-height: 60px;
+        width: 230px;
+        margin: 0 auto;
+        color: #fff;
+        cursor: pointer;
+        text-align: center;
+        float: left;
+        @keyframes loader {
+          25% {
+            background: $curcle_buttons_flash;
+            transform: scale(1.5);
+            box-shadow: -1px 15px 30px 0px rgba(50, 50, 50, 0.20);
+          }
+          50% {
+            transform: scale(.95);
+          }
+          80% {
+            transform: scale(1);
+          }
+        }
+        &:hover {
+          animation: loader .6s ease;
+          animation-delay: .1s;
         }
       }
     }
