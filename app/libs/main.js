@@ -281,8 +281,6 @@ $(document).ready( function() {
 
         resultDisplayArray = [];
 
-    console.log(countOfActions);
-
     }
 
     $('.ui-menu__toggle_six').on( 'click', function() {
