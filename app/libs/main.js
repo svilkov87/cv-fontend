@@ -1,10 +1,10 @@
 $(document).ready( function() {
 
     //loader
-     $(window).load( function() {
-         $("#object").fadeOut();
-         $("#loading").delay(100).fadeOut("slow");
-     } );
+    $(window).load( function() {
+       $("#object").fadeOut();
+       $("#loading").delay(100).fadeOut("slow");
+   } );
 
     // серый фон при скролле
     $(window).scroll( function () {
@@ -12,20 +12,20 @@ $(document).ready( function() {
         var st = $( this ).scrollTop();
 
         $("#head")
-            .css({
-                "filter": "grayscale(" + st / 50 + ")"
+        .css({
+            "filter": "grayscale(" + st / 50 + ")"
                   // "bottom" : "translate3d(0px, " + st/ 100  + "%, .01px)"
                   // "-webkit-transform" : "translate3d(0px, " + st/ 100  + "%, .01px)"
-            } );
+              } );
     } );
 
     //протфолио показать подробности
     $('.sb_more').click( function() {
         $( this )
-            .toggleClass('burger');
+        .toggleClass('burger');
         $( this )
-            .prev(".second_blcok")
-            .toggleClass('active');
+        .prev(".second_blcok")
+        .toggleClass('active');
     });
 
     //скролл side главная страница
@@ -53,7 +53,7 @@ $(document).ready( function() {
         var id = $(this).attr('href'),
 
         // находим высоту, на которой расположен блок
-            top = $(id).offset().top;
+        top = $(id).offset().top;
 
         // анимируем переход к блоку, время: 800 мс
         $('body,html').animate({scrollTop: top}, 800);
@@ -84,8 +84,8 @@ $(document).ready( function() {
     $('.btn_modal').click(function(e){
         e.preventDefault();
         var name = $('#name').val(),
-            s_name = $('#s_name').val(),
-            field = $('#modal_field').val();
+        s_name = $('#s_name').val(),
+        field = $('#modal_field').val();
 
         if( name == "" || s_name == "" || field == ""){
             $('.err_block').css("display" , "block");
@@ -114,13 +114,13 @@ $(document).ready( function() {
     $('.button_go').on('click', function() {
 
         var $aboutMePosition = $('#about_me')
-            .offset()
-            .top;
+        .offset()
+        .top;
 
         $('body,html')
-            .animate({
-                scrollTop: $aboutMePosition
-            }, 300);
+        .animate({
+            scrollTop: $aboutMePosition
+        }, 300);
 
     });
 
@@ -128,11 +128,11 @@ $(document).ready( function() {
     $(window).scroll(function() {
         if ($(this).scrollTop() > 250){
           $('#top').fadeIn(100);
-        }
-        else{
+      }
+      else{
           $('#top').fadeOut(100);
-        }
-    });
+      }
+  });
 
     //Кнопка "Наверх"
     //Документация:
@@ -141,7 +141,7 @@ $(document).ready( function() {
     $("#top").click(function () {
         $("body, html").animate({
           scrollTop: 0
-        }, 800);
+      }, 800);
         return false;
     });
 
@@ -162,14 +162,14 @@ $(document).ready( function() {
         function () {
 
             var $parent     = $( this ).parents('.ui-menu__wrapper'),
-                $annotation = $parent.find('.ui-menu__annotation').addClass('show');
+            $annotation = $parent.find('.ui-menu__annotation').addClass('show');
         },
         function () {
 
             var $parent     = $(this).parents('.ui-menu__wrapper'),
-                $annotation = $parent.find('.ui-menu__annotation').removeClass('show');
+            $annotation = $parent.find('.ui-menu__annotation').removeClass('show');
         }
-    );
+        );
 
     //four
 
@@ -185,7 +185,7 @@ $(document).ready( function() {
         function () {
             $(this).children('.ui-menu__ul-child').fadeOut(150);
         }
-    );
+        );
 
     //five
 
@@ -194,14 +194,14 @@ $(document).ready( function() {
         $( '.ui-menu__drop_five' ).toggleClass('drop_five_active');
 
         var $liFiveItems = $('.ui-menu__drop_five')
-                .find('.ui-menu__li');
+        .find('.ui-menu__li');
 
         $liFiveItems.each(function () {
 
             var sideData  = $( this ).data('side'),
-                listItems = $( this ),
-                liWrapp   = $( this ).find('.ui-menu__li-wrapp'),
-                delayData = $( this ).data('delay');
+            listItems = $( this ),
+            liWrapp   = $( this ).find('.ui-menu__li-wrapp'),
+            delayData = $( this ).data('delay');
 
             // console.log( delayData );
 
@@ -236,7 +236,7 @@ $(document).ready( function() {
             $(this).prev().removeClass('previous');
             $FiveItems.not($(this)).removeClass('wave');
         }
-    );
+        );
 
     $FiveItems.on( 'click', function(){
         $( this ).toggleClass('fixed');
@@ -244,36 +244,61 @@ $(document).ready( function() {
 
     // six
 
-    resultDisplayArray = [];
+    var count = 0;
+        resultDisplayArray = [];
+        countOfChosenItems = [];
+        countOfActions     = [];
 
-    function pushToResultTable(par) {
+    function pushToResultTable(par, fixed) {
+
+        count++;
 
         $('.ui-menu__result-table').show();
+
         for ( var i = 0; i < resultDisplayArray.length; i++) {
+
             $('.ui-menu__result-description').text(resultDisplayArray[i]);
+
         }
-        if (par !== undefined) {
-            $('.ui-menu__result-table > .ui-menu__result-header').text(par);
+
+        for ( var i = 0; i < countOfChosenItems.length; i++) {
+
+            $('.ui-menu__stat > .ui-menu__count-chosen').html('Выбрано элементов: ' + '<span class="count_choosen">' + (i + 1) + '</span>');
+
         }
+
+        if (countOfChosenItems.length == 0) {
+            $('.ui-menu__stat > .ui-menu__count-chosen').html('Выбрано элементов: 0');
+        }
+
+
+        if (countOfActions.length == 0) {
+            $('.ui-menu__stat > .ui-menu__count-actions').html('Всего действий: 0');
+        } else {
+            $('.ui-menu__stat > .ui-menu__count-actions').html('Всего действий: ' + '<strong>' + count + '</strong>');
+        }
+
+
         resultDisplayArray = [];
+
+    console.log(countOfActions);
+
     }
 
     $('.ui-menu__toggle_six').on( 'click', function() {
 
-        pushToResultTable('Меню активированно');
-
         $( this ).toggleClass('active_toggle');
         $( '.ui-menu__drop_six' ).toggleClass('drop_six_active');
 
-        var $liFiveItems = $('.ui-menu__drop_six')
-                .find('.ui-menu__li');
+        var $liSixItems = $('.ui-menu__drop_six')
+            .find('.ui-menu__li');
 
-        $liFiveItems.each(function () {
+        $liSixItems.each(function () {
 
             var sideData  = $( this ).data('side'),
-                listItems = $( this ),
-                liWrapp   = $( this ).find('.ui-menu__li-wrapp'),
-                delayData = $( this ).data('delay');
+            listItems = $( this ),
+            liWrapp   = $( this ).find('.ui-menu__li-wrapp'),
+            delayData = $( this ).data('delay');
 
             // console.log( delayData );
 
@@ -288,27 +313,14 @@ $(document).ready( function() {
 
     var $sixItems = $('.ui-menu__drop_six').find('.ui-menu__li');
 
-    $('.ui-menu__drop_six').hover(
-        function () {
-
-        // resultDisplayArray.push('Установлен hover-эффект');
-        pushToResultTable('Hover-эффект используется');
-        },
-        function () {
-
-        pushToResultTable('Hover-эффект снят');
-        }
-    );
-
     $sixItems.hover(
         function () {
+            $('.ui-menu__stat').addClass('open_stat');
+            $itemNumber = 'Пункт ' + $( this ).children('.ui-menu__li-span').html();
 
-        $itemNumber = 'Наведение на пункт ' + $( this ).html();
-
-        resultDisplayArray.push($itemNumber);
-        pushToResultTable();
-
-        console.log($itemNumber);
+            resultDisplayArray.push($itemNumber);
+            pushToResultTable();
+            countOfActions.push('');
 
             $(this).prev().addClass('previous');
             $(this).next().addClass('next');
@@ -320,48 +332,58 @@ $(document).ready( function() {
             $(this).prev().removeClass('previous');
             $sixItems.not($(this)).removeClass('wave');
         }
-    );
+        );
 
     $sixItems.on( 'click', function(){
 
-        // resultDisplayArray.push('Меню активировано');
-
         $( this ).toggleClass('fixed');
+        $('.ui-menu__stat').addClass('open_stat');
 
-        $chosenItem  = 'Выбран пункт ' + $( this ).html();
-        // $detetedItem = 'Удален пункт ' + $( this ).html();
+        $chosenItem  = 'Пункт ' + $( this ).children('.ui-menu__li-span').html() + ' активен';
+        $detetedItem = 'Снят пункт ' + $( this ).children('.ui-menu__li-span').html();
 
-        // if( $( this ).hasClass('fixed') ) {
+        if( $( this ).hasClass('fixed') ) {
+
             resultDisplayArray.push($chosenItem);
+            countOfChosenItems.push($chosenItem);
+            pushToResultTable('', $chosenItem);
+            countOfActions.push('');
+        } else {
+            resultDisplayArray.push($detetedItem);
+            countOfChosenItems.pop();
             pushToResultTable();
-        // }else {
-            // resultDisplayArray.push($detetedItem);
-        // }
+        }
 
         var $parentItems   = $(this).parent('.ui-menu__ul'),
-            $resultDisplay = $parentItems.prev('.ui-menu__result-table');
+        $resultDisplay = $parentItems.prev('.ui-menu__result-table');
 
-            $resultDisplay.addClass('show');
+        $resultDisplay.addClass('show');
 
     } );
+
+
+
+
+
+
 
 
     //photocard
     $('.ui-quadro-center').mouseenter( function(){
         var $photocard = $('.ui-photocard'),
-            $widthQuadroCenter = $( this ).width();
+        $widthQuadroCenter = $( this ).width();
 
             // console.log($widthQuadroCenter);
 
-                setTimeout(function () {
-                    $photocard.addClass('active_photocard');
-                    $photocard.width($widthQuadroCenter);
-                }, 1000),
-                setTimeout(function () {
-                    $photocard.removeClass('active_photocard');
-                }, 2500)
+            setTimeout(function () {
+                $photocard.addClass('active_photocard');
+                $photocard.width($widthQuadroCenter);
+            }, 1000),
+            setTimeout(function () {
+                $photocard.removeClass('active_photocard');
+            }, 2500)
 
-    } );
+        } );
 
 } );
 

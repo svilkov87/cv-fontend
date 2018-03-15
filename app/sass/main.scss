@@ -337,7 +337,7 @@ body{
   min-height: 650px;
   height: auto;
   background: #fff;
-  padding: 60px 60px 110px 60px;
+  padding: 60px 60px 215px 60px;
   overflow: hidden;
   margin-left: 280px;
   background: #f4f4f4;
@@ -1019,13 +1019,34 @@ body{
           .ui-menu__result-table{
             display: none;
             padding: 10px;
+            margin: 5px;
+            border: 1px solid #ef3d3d;
+            border-radius: 3px;
+            background: rgba(255, 165, 0, 0.41);
             .ui-menu__result-header {
               margin-bottom: 5px;
             }
             .ui-menu__result-description {
-              padding: 5px;
+              margin-bottom: 5px;
               display: inline-block;
-              font-size: 14px;
+            }
+            .ui-menu__stat{
+              opacity: 0;
+              display: none;
+              visibility: hidden;
+              .ui-menu__count-chosen{
+
+                .count_choosen{
+                  color: green;
+                  font-weight: bold;
+                }
+
+              }
+            }
+            .open_stat {
+              display: block;
+              opacity: 1;
+              visibility: visible;
             }
           }
           .show {
@@ -1062,6 +1083,12 @@ body{
                 }
                 // box-shadow: 0 2px 16px 0 rgba(255,255,255,.49);
               }
+              .ui-menu__li-input{
+                width: 50px;
+              }
+              .ui-menu__li-span{
+                // width: 50px;
+              }
             }
             .ui-menu__li-active{
               opacity: 1;
@@ -1069,11 +1096,11 @@ body{
               transform: scale(1);
             }
             .wave {
-              background: #f4f4f4;
-              filter: blur(1px);
+              // background: #f4f4f4;
+              filter: blur(.8px);
             }
             .previous {
-              background: -webkit-linear-gradient(bottom, #e6e6e6 2%, #f4f4f4) 80%;
+              background: -webkit-linear-gradient(bottom, #e6e6e6 2%, #f4f4f4 80%);
               background: -o-linear-gradient(bottom, #e6e6e6 2%, #f4f4f4 80%);
               background: linear-gradient(to top, #e6e6e6 2%, #f4f4f4 80%);
             }
