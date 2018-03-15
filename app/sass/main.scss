@@ -1247,6 +1247,37 @@ body{
           animation-delay: .1s;
         }
       }
+      .ui-circle-buttons {
+        margin-bottom: 100px;
+        .cir_one{
+          background: $curcle_buttons_flash;
+          cursor: pointer;
+          width: 100px;
+          height: 100px;
+          margin: 25px auto;
+          border-radius: 50%;
+          box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
+          transition: all .5s ease;
+          perspective: 500px;
+          @keyframes cricle_flash {
+            25% {
+              transform: scale(1.5);
+              background: #bbe3f3;
+              box-shadow: 0 2px 14px 0 rgba(0,0,0,.4);
+            }
+            50% {
+              transform: scale(.78);
+            }
+            80% {
+              transform: scale(1);
+            }
+          }
+          &:hover {
+            animation: cricle_flash .6s ease;
+            animation-delay: .1s;
+          }
+        }
+      }
     }
   }
 }
