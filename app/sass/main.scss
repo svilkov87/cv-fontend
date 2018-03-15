@@ -510,114 +510,114 @@ body{
           opacity: 1;
         }
         &:hover .ui_grid_description {
-           transform: translateX(0);
-           opacity: 1;
-        }
-        &:hover .ui_grid_img {
-           transform: scale(4);
-           filter: opacity(10%);
-        }
-        .ui_grid_img {
-          max-width: 100%;
-          height: auto;
-          transition: all .2s ease-in-out;
-        }
-        .ui-grid-bg {
-          opacity: 0;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-          background: #000;
-          transition: all .2s ease-in-out;
-          transition-delay: .3s;
-          text-align: center;
-        }
-        .ui_grid_header {
-          text-transform: uppercase;
-          margin: 75px 0 0 0;
-          font-size: $font_size_headers;
-          opacity: 0;
-          color: #fff;
-          transform: translateX(-25px);
-          transition: all .2s ease-in-out;
-          transition-delay: .5s;
-        }
-        .ui_grid_description {
-          opacity: 0;
-          color: #fff;
-          padding: 20px 20px 20px;
-          transform: translateX(25px);
-          display: inline-block;
-          font-size: $font_size_descriptions;
-          transition: all .2s ease-in-out;
-          transition-delay: .5s;
-        }
+         transform: translateX(0);
+         opacity: 1;
+       }
+       &:hover .ui_grid_img {
+         transform: scale(4);
+         filter: opacity(10%);
+       }
+       .ui_grid_img {
+        max-width: 100%;
+        height: auto;
+        transition: all .2s ease-in-out;
       }
-      .ui-bottom-effiect {
-        text-align: center;
-        position: relative;
+      .ui-grid-bg {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         overflow: hidden;
-        &:hover .ui-bottom-left__bg {
-          transform: translateX(0);
-          opacity: 1;
-        }
-        &:hover .ui-bottom-left__bg > .ui-bottom-left__title{
-          transform: scale(1);
-          opacity: 1;
-        }
-        &:hover .ui-bottom-left__bg > .ui-bottom-left__description{
-          transform: scale(1);
-          opacity: 1;
-        }
-        &:hover .ui_bottom_img {
-          transform: translateX(100%);
-          filter: blur(50px);
-        }
-        .ui-bottom-left__bg{
-          opacity: 0;
-          transform: translateX(-100%);
-          background: #000;
-          transition: all .4s ease-in-out;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-          .ui-bottom-left__title {
-            color: #fff;
-            transform: scale(3);
-            opacity: 0;
-            text-transform: uppercase;
-            margin: 75px 0 0 0;
-            font-size: $font_size_headers;
-            transition: all .2s ease-in-out;
-            transition-delay: .2s;
-          }
-          .ui-bottom-left__description{
-              opacity: 0;
-              color: #fff;
-              transform: scale(3);
-              position: relative;
-              padding: 20px 20px 20px;
-              text-align: center;
-              font-size: $font_size_descriptions;
-              transition: all .2s ease-in-out;
-              transition-delay: .4s;
-          }
-        }
-        .ui_bottom_img {
-          max-width: 100%;
-          height: auto;
-          transition: all .4s ease-in-out;
-        }
+        background: #000;
+        transition: all .2s ease-in-out;
+        transition-delay: .3s;
+        text-align: center;
+      }
+      .ui_grid_header {
+        text-transform: uppercase;
+        margin: 75px 0 0 0;
+        font-size: $font_size_headers;
+        opacity: 0;
+        color: #fff;
+        transform: translateX(-25px);
+        transition: all .2s ease-in-out;
+        transition-delay: .5s;
+      }
+      .ui_grid_description {
+        opacity: 0;
+        color: #fff;
+        padding: 20px 20px 20px;
+        transform: translateX(25px);
+        display: inline-block;
+        font-size: $font_size_descriptions;
+        transition: all .2s ease-in-out;
+        transition-delay: .5s;
       }
     }
+    .ui-bottom-effiect {
+      text-align: center;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      &:hover .ui-bottom-left__bg {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      &:hover .ui-bottom-left__bg > .ui-bottom-left__title{
+        transform: scale(1);
+        opacity: 1;
+      }
+      &:hover .ui-bottom-left__bg > .ui-bottom-left__description{
+        transform: scale(1);
+        opacity: 1;
+      }
+      &:hover .ui_bottom_img {
+        transform: translateX(100%);
+        filter: blur(50px);
+      }
+      .ui-bottom-left__bg{
+        opacity: 0;
+        transform: translateX(-100%);
+        background: #000;
+        transition: all .4s ease-in-out;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        .ui-bottom-left__title {
+          color: #fff;
+          transform: scale(3);
+          opacity: 0;
+          text-transform: uppercase;
+          margin: 75px 0 0 0;
+          font-size: $font_size_headers;
+          transition: all .2s ease-in-out;
+          transition-delay: .2s;
+        }
+        .ui-bottom-left__description{
+          opacity: 0;
+          color: #fff;
+          transform: scale(3);
+          position: relative;
+          padding: 20px 20px 20px;
+          text-align: center;
+          font-size: $font_size_descriptions;
+          transition: all .2s ease-in-out;
+          transition-delay: .4s;
+        }
+      }
+      .ui_bottom_img {
+        max-width: 100%;
+        height: auto;
+        transition: all .4s ease-in-out;
+      }
+    }
+  }
     //ui dropdown menu
     .ui-menu {
       overflow: hidden;
@@ -718,13 +718,13 @@ body{
           }
           .active_toggle {
             transform: rotate(-90deg);
-              &:after {
-                content: '';
-                position: absolute;
-                width: 20px;
-                height: 1px;
-                background: #000;
-                background: $alter_bg_hover;
+            &:after {
+              content: '';
+              position: absolute;
+              width: 20px;
+              height: 1px;
+              background: #000;
+              background: $alter_bg_hover;
                 // transform: rotate(90deg) translate(0, -10px);
               }
               &:before {
@@ -740,14 +740,14 @@ body{
               &:hover {
                 // transform: rotate(-90deg);
               }
-          }
-          .ui-menu__toggle_five {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
+            }
+            .ui-menu__toggle_five {
+              position: absolute;
+              top: 20px;
+              right: 25px;
+              width: 20px;
+              height: 20px;
+              cursor: pointer;
             // background: #ccc;
             // transform: rotate(45deg);
             @include transition($default);
@@ -777,13 +777,13 @@ body{
           }
           .active_toggle {
             transform: rotate(-90deg);
-              &:after {
-                content: '';
-                position: absolute;
-                width: 20px;
-                height: 1px;
-                background: #000;
-                background: $alter_bg_hover;
+            &:after {
+              content: '';
+              position: absolute;
+              width: 20px;
+              height: 1px;
+              background: #000;
+              background: $alter_bg_hover;
                 // transform: rotate(90deg) translate(0, -10px);
               }
               &:before {
@@ -799,14 +799,14 @@ body{
               &:hover {
                 // transform: rotate(-90deg);
               }
-          }
-          .ui-menu__toggle_six {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
+            }
+            .ui-menu__toggle_six {
+              position: absolute;
+              top: 20px;
+              right: 25px;
+              width: 20px;
+              height: 20px;
+              cursor: pointer;
             // background: #ccc;
             // transform: rotate(45deg);
             @include transition($default);
@@ -836,13 +836,13 @@ body{
           }
           .active_toggle {
             transform: rotate(-90deg);
-              &:after {
-                content: '';
-                position: absolute;
-                width: 20px;
-                height: 1px;
-                background: #000;
-                background: $alter_bg_hover;
+            &:after {
+              content: '';
+              position: absolute;
+              width: 20px;
+              height: 1px;
+              background: #000;
+              background: $alter_bg_hover;
                 // transform: rotate(90deg) translate(0, -10px);
               }
               &:before {
@@ -858,98 +858,55 @@ body{
               &:hover {
                 // transform: rotate(-90deg);
               }
+            }
           }
-        }
-        .ui-menu__drop_four{
-          opacity: 0;
-          visibility: hidden;
-          transform: scale(1.1);
-          width: 100%;
-          height: auto;
-          background: #fff;
-          box-shadow: -2px 6px 14px 0 rgba(50,50,50,.49);
-          transition: .2s ease-in-out;
-          .ui-menu__ul{
-            background: #eee;
-            .ui-menu__li {
-              position: relative;
-              background: #fff;
-              margin-bottom: 1px;
-              text-align: left;
-              transition: .2s ease-in-out;
-              &:hover {
-                transform: translateX(20px);
-                box-shadow: -2px 6px 14px 0 rgba(50,50,50,.49);
-              }
-              &:hover::after {
-                background: $alter_bg;
-              }
-              span {
-                padding: 20px 25px;
-                display: inline-block;
-              }
-              .ui-menu__ul-child {
-                background: #bbb;
-                display: none;
-                .ui-menu__li-child {
-                  background: #eee;
-                  transition: .2s ease-in-out;
-                  &:hover {
-                    background: #fff;
-                    transform: translateX(-1px);
-                    box-shadow: 0px 6px 14px 0 rgba(178, 178, 178, 0.49);
-                  }
-                  .ui-menu__li-child_span {
-                    padding: 15px 40px;
-                    display: inline-block;
+          .ui-menu__drop_four{
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(1.1);
+            width: 100%;
+            height: auto;
+            background: #fff;
+            box-shadow: -2px 6px 14px 0 rgba(50,50,50,.49);
+            transition: .2s ease-in-out;
+            .ui-menu__ul{
+              background: #eee;
+              .ui-menu__li {
+                position: relative;
+                background: #fff;
+                margin-bottom: 1px;
+                text-align: left;
+                transition: .2s ease-in-out;
+                &:hover {
+                  transform: translateX(20px);
+                  box-shadow: -2px 6px 14px 0 rgba(50,50,50,.49);
+                }
+                &:hover::after {
+                  background: $alter_bg;
+                }
+                span {
+                  padding: 20px 25px;
+                  display: inline-block;
+                }
+                .ui-menu__ul-child {
+                  background: #bbb;
+                  display: none;
+                  .ui-menu__li-child {
+                    background: #eee;
+                    transition: .2s ease-in-out;
+                    &:hover {
+                      background: #fff;
+                      transform: translateX(-1px);
+                      box-shadow: 0px 6px 14px 0 rgba(178, 178, 178, 0.49);
+                    }
+                    .ui-menu__li-child_span {
+                      padding: 15px 40px;
+                      display: inline-block;
+                    }
                   }
                 }
               }
-            }
-            .icon {
-              &:after {
-                content: '';
-                position: absolute;
-                top: 24px;
-                right: 30px;
-                width: 10px;
-                height: 10px;
-                border: 1px solid $alter_bg;
-                border-radius: 50%;
-              }
-            }
-          }
-        }
-        .drop_four_active {
-          opacity: 1;
-          transform: scale(1);
-          visibility: visible;
-        }
-        .ui-menu__drop_five{
-          opacity: 0;
-          visibility: hidden;
-          transform: translateY(50px);
-          width: 100%;
-          height: auto;
-          background: #fff;
-          box-shadow: -2px 6px 14px 0 rgba(50,50,50,.49);
-          transition: .2s ease-in-out;
-          .ui-menu__ul{
-            background: #eee;
-            .ui-menu__li {
-              opacity: 0;
-              visibility: hidden;
-              background: #fff;
-              text-align: left;
-              margin-bottom: 1px;
-              transition: .2s ease-in-out;
-              transform: scale(1.9);
-              padding: 20px 25px;
-              transition: .2s ease-in-out;
-              cursor: pointer;
-              &:hover {
-                transform: scale(1.1) translateY(-5px);
-                border: 1px solid #ccc;
+              .icon {
                 &:after {
                   content: '';
                   position: absolute;
@@ -957,10 +914,53 @@ body{
                   right: 30px;
                   width: 10px;
                   height: 10px;
-                  border: 1px solid #ff4500;
-                  -webkit-border-radius: 50%;
+                  border: 1px solid $alter_bg;
                   border-radius: 50%;
                 }
+              }
+            }
+          }
+          .drop_four_active {
+            opacity: 1;
+            transform: scale(1);
+            visibility: visible;
+          }
+          .ui-menu__drop_five{
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(50px);
+            width: 100%;
+            height: auto;
+            background: #fff;
+            box-shadow: -2px 6px 14px 0 rgba(50,50,50,.49);
+            transition: .2s ease-in-out;
+            .ui-menu__ul{
+              background: #eee;
+              .ui-menu__li {
+                opacity: 0;
+                visibility: hidden;
+                background: #fff;
+                text-align: left;
+                margin-bottom: 1px;
+                transition: .2s ease-in-out;
+                transform: scale(1.9);
+                padding: 20px 25px;
+                transition: .2s ease-in-out;
+                cursor: pointer;
+                &:hover {
+                  transform: scale(1.1) translateY(-5px);
+                  border: 1px solid #ccc;
+                  &:after {
+                    content: '';
+                    position: absolute;
+                    top: 24px;
+                    right: 30px;
+                    width: 10px;
+                    height: 10px;
+                    border: 1px solid #ff4500;
+                    -webkit-border-radius: 50%;
+                    border-radius: 50%;
+                  }
                 // box-shadow: 0 2px 16px 0 rgba(255,255,255,.49);
               }
             }
@@ -988,18 +988,18 @@ body{
               background: #fff;
               filter: none;
               transform: scale(1.1) translateY(-5px);
-                &:before {
-                  content: '';
-                  position: absolute;
-                  top: 24px;
-                  right: 30px;
-                  width: 10px;
-                  height: 10px;
-                  background: $alter_bg;
-                  border: 1px solid #ff4500;
-                  -webkit-border-radius: 50%;
-                  border-radius: 50%;
-                }
+              &:before {
+                content: '';
+                position: absolute;
+                top: 24px;
+                right: 30px;
+                width: 10px;
+                height: 10px;
+                background: $alter_bg;
+                border: 1px solid #ff4500;
+                -webkit-border-radius: 50%;
+                border-radius: 50%;
+              }
             }
           }
         }
@@ -1121,18 +1121,18 @@ body{
               background: #fff;
               filter: none;
               transform: scale(1.1) translateY(-5px);
-                &:before {
-                  content: '';
-                  position: absolute;
-                  top: 24px;
-                  right: 30px;
-                  width: 10px;
-                  height: 10px;
-                  background: $alter_bg;
-                  border: 1px solid #ff4500;
-                  -webkit-border-radius: 50%;
-                  border-radius: 50%;
-                }
+              &:before {
+                content: '';
+                position: absolute;
+                top: 24px;
+                right: 30px;
+                width: 10px;
+                height: 10px;
+                background: $alter_bg;
+                border: 1px solid #ff4500;
+                -webkit-border-radius: 50%;
+                border-radius: 50%;
+              }
             }
           }
         }
@@ -1157,44 +1157,31 @@ body{
         position: relative;
         display: block;
         height: 60px;
+        line-height: 60px;
         width: 230px;
         margin: 0 auto;
-        color: #fff;
+        color: #000;
         cursor: pointer;
         text-align: center;
         float: right;
         overflow: hidden;
-        .button-sev__hide {
-          line-height: 60px;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
+        background: #fff;
+        outline: none;
+        border: 3px solid $alter_bg;
+        transition: $default ease-in-out;
+        transition-delay: 1.3s;
+        &:hover {
           background: $alter_bg;
-          transition: $default ease-in-out;
-          &::after {
-            content: 'Button';
-            line-height: 60px;
-            position: absolute;
-            top: -100%;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: $alter_bg_hover;
-            transition: $default ease-in-out;
-          }
-        }
-        &:hover .button-sev__hide{
-          top: 100%;
-        }
 
+          color: #fff;
+        }
         &:hover .button-sev__senter{
           animation: bubble .6s ease-in-out;
-          -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-          // animation-delay: .1s;
-          animation-duration: .6s;
+          // -webkit-animation-fill-mode: forwards;
+          // animation-fill-mode: forwards;
+          animation-delay: .1s;
+          animation-duration: 2s;
+          animation-timing-function: cubic-bezier(.15, .1, .2, 1.5);
         }
         .button-sev__senter{
           opacity: 0;
@@ -1202,7 +1189,7 @@ body{
           left: 39%;
           top: 8%;
           background: transparent;
-          border: 3px solid #fff;
+          border: 3px solid $alter_bg;
           width: 50px;
           height: 50px;
           border-radius: 50%;
@@ -1211,24 +1198,19 @@ body{
           transform: scale(.5);
           @keyframes bubble {
             0{
-              background: rgba(255, 69, 0, 0.9);
+              background: $alter_bg;
             }
             25% {
               transform: scale(1.8);
-
             }
             50% {
-              transform: scale(.95);
+              transform: scale(.99);
+              background: #fff;
             }
             100% {
-              background: #fff;
-              transform: scale(1);
-              width: 96%;
-              border-radius: 3px;
-              left: 5px;
-              top: 5px;
-              right: 10px;
-              bottom: 5px;
+              background: $alter_bg;
+              transform: scale(9);
+              opacity: 1;
             }
           }
           &:hover {
