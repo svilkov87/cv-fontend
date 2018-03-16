@@ -5,10 +5,39 @@
 
 body{
   font-family: 'Roboto', sans-serif;
-  .content_middle{
-    width: 960px;
-    margin-left: auto;
-    margin-right: auto;
+  .main {
+    .content_middle{
+      width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+      @include tablet_max {
+        width: 100%;
+      }
+      @include laptop {
+        width: 100%;
+      }
+    }
+    .cv_sections{
+      @include tablet_max {
+        margin-left: 0 !important;
+      }
+      @include mobile_l {
+        padding: 25px !important;
+      }
+    }
+  }
+  .on {
+    transition: all .3s ease;
+    &::before {
+      position: fixed;
+      content: "";
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(0,0,0,.5);
+      z-index: 9;
+    }
   }
 }
 
@@ -78,10 +107,11 @@ body{
   position: fixed;
   bottom: 15px;
   right: 15px;
-  background: #85afff;
+  background: $curcle_buttons_flash;
   color: #fff;
   display: none;
   padding: 15px;
+  z-index: 99999999;
   @include bradius(50%);
 }
 #menu_toggle {
@@ -89,12 +119,21 @@ body{
   color: #fff;
   top: 10px;
   left: 10px;
-  background: #5aa7ff;
+  background: $curcle_buttons_flash;
   padding: 10px;
   z-index: 9;
   font-size: 20px;
   cursor: pointer;
   transition: all .2s ease;
+  @include tablet_max {
+    display: inline-block;
+    position: fixed;
+  }
+}
+.mleft {
+  background: 0 0!important;
+  left: 290px !important;
+  border-radius: 50%;
 }
 .side_menu{
   position: fixed;
@@ -103,6 +142,11 @@ body{
   top: 0;
   left: 0;
   background: #000;
+  z-index: 999;
+  transition: all .2s ease-in-out;
+  @include tablet_max {
+    left: -100%;
+  }
   .side_top {
     position: relative;
     margin-bottom: 20px;
@@ -184,6 +228,9 @@ body{
     }
   }
 }
+.sleft {
+  left: 0;
+}
 #head{
   margin-left: 280px;
   height: 650px;
@@ -257,6 +304,10 @@ body{
       text-align: center;
       margin-bottom: 50px;
       font-weight: 300;
+      @include mobile_l {
+        text-align: left;
+        margin-bottom: 15px;
+      }
       .story_name {
         color: $alter_bg;
       }
@@ -265,14 +316,23 @@ body{
   .items_profile {
     .ul_info {
       margin-bottom: 30px;
+      @include mobile_l {
+        margin-bottom: 40px;
+      }
       .li_info {
         padding: 10px 0 0;
         margin-bottom: 11px;
         line-height: 28px;
         font-weight: 300;
+        @include mobile_l {
+          margin-bottom: 0 !important;
+        }
         span {
           color: #1a1a1a;
           font-weight: 700;
+          @include mobile_l {
+            font-weight: normal;
+          }
         }
       }
     }
@@ -325,6 +385,9 @@ body{
           span {
             line-height: 50px;
             margin-left: 25px;
+            @include mobile_l {
+              font-size: 14px;
+            }
           }
         }
         .sk_bottom {
@@ -332,7 +395,6 @@ body{
           span {
             line-height: 50px;
             margin-left: 25px;
-            // color: $alter_color;
           }
         }
       }
@@ -347,6 +409,9 @@ body{
   overflow: hidden;
   margin-left: 280px;
   background: #f4f4f4;
+  @include tablet_max {
+    padding: 60px;
+  }
   .about_ui {
     text-align: center;
     margin-bottom: 30px;
@@ -370,6 +435,14 @@ body{
     .ui-opacity {
       margin-bottom: 60px;
       overflow: hidden;
+      @include tablet_max {
+        margin-bottom: 0 !important;
+      }
+      .ui-frames{
+        @include tablet_max {
+          margin-bottom: 35px;
+        }
+      }
       .ui-quadro-center {
         height: 100%;
         width: 100%;
@@ -543,7 +616,7 @@ body{
       }
       .ui_grid_header {
         text-transform: uppercase;
-        margin: 75px 0 0 0;
+        margin: 15% 0 0 0;
         font-size: $font_size_headers;
         opacity: 0;
         color: #fff;
@@ -600,7 +673,7 @@ body{
           transform: scale(3);
           opacity: 0;
           text-transform: uppercase;
-          margin: 75px 0 0 0;
+          margin: 15% 0 0 0;
           font-size: $font_size_headers;
           transition: all .2s ease-in-out;
           transition-delay: .2s;
@@ -627,13 +700,23 @@ body{
     //ui dropdown menu
     .ui-menu {
       overflow: hidden;
-      min-height: 510px;
+      min-height: 520px;
+      @include tablet_max {
+        // margin-bottom: 180px;
+        // min-height: 520px;
+      }
+      @include mobile_l {
+        margin-bottom: 0 !important;
+      }
       .ui-menu__wrapper {
         height: 320px;
         background: #fcfcfc;
         margin-bottom: 20px;
         position: relative;
         border: 1px solid #ccc;
+        @include mobile_l {
+          margin-bottom: 195px;
+        }
         .ui-menu__annotation{
           opacity: 0;
           visibility: hidden;
@@ -1178,6 +1261,13 @@ body{
           overflow: hidden;
           outline: none;
           transition: color 0.25s;
+          @include tablet_max {
+            float: none;
+            margin-bottom: 25px;
+          }
+          @include mobile_l {
+            width: 100%;
+          }
           // transition-delay: 1.3s;
           &::before,
           &::after {
@@ -1235,6 +1325,12 @@ body{
           cursor: pointer;
           text-align: center;
           float: left;
+          @include tablet_max {
+            float: none;
+          }
+          @include mobile_l {
+            width: 100%;
+          }
           @keyframes loader {
             25% {
               background: $curcle_buttons_flash;
@@ -1256,6 +1352,11 @@ body{
       }
       .ui-circle-buttons {
         margin-bottom: 100px;
+        .cir {
+          @include tablet_max {
+            margin-bottom: 35px !important;
+          }
+        }
         .cir_one{
           background: $curcle_buttons_flash;
           cursor: pointer;
@@ -1358,11 +1459,11 @@ body{
           box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
           transition: all .5s ease;
           &:hover .cir_four_border {
-            transform: scale(1.5);
+            transform: scale(2.5);
             opacity: 0;
-            border: 6px solid rgba(120,188,255,.75);
+            // border: 6px solid rgba(120,188,255,.75);
+            border: 4px solid #ccc;
             transition-delay: .5s;
-            // transition-timing-function: cubic-bezier(.1,.9,.9,.1);
           }
           .cir_four_border {
             position: absolute;
@@ -1378,7 +1479,7 @@ body{
             transition: all .6s ease;
           }
           &:hover {
-            transform: scale(.85);
+            transform: scale(.65);
             transition-timing-function: cubic-bezier(.1,.9,.9,.1);
             box-shadow: 0 4px 7px 0 rgba(0,0,0,.2);
           }
@@ -1388,6 +1489,245 @@ body{
   }
 }
 
+.hireme{
+  background: url(../img/hireme-bg.jpg) no-repeat #000;
+  -webkit-background-size: cover;
+  background-size: cover;
+  margin-left: 280px;
+  height: 350px;
+  position: relative;
+  text-align: center;
+  padding-top: 50px;
+  margin-bottom: 0;
+  margin-top: 0;
+  color: #fff;
+  .my_tragets {
+    text-transform: uppercase;
+    margin-bottom: 100px;
+  }
+  .yellow {
+    color: #ff0;
+  }
+}
+#my_works {
+  height: auto;
+  overflow: hidden;
+  margin-left: 280px;
+  min-height: 450px;
+  padding: 2rem 0;
+  background: #fff;
+  .my_w_header{
+    text-align: center;
+    padding: 2rem 0;
+    h2 {
+      font-weight: 700;
+      text-transform: uppercase;
+      padding-bottom: 1rem;
+      font-size: 1.5625em;
+    }
+  }
+  .example_wrapp {
+    .main_ex {
+      height: 250px;
+      overflow: hidden;
+      background: #ff6b2f;
+      margin-top: 25px;
+      position: relative;
+      transition: all .2s ease;
+      &:hover {
+        background: #c45224;
+      }
+      &:hover a > img {
+        opacity: 1;
+        bottom: 0;
+      }
+      &:hover .top {
+        transform: scale(.76);
+      }
+      a {
+        text-decoration: none;
+        img {
+          opacity: 0;
+          position: absolute;
+          right: 0;
+          bottom: -100%;
+          width: 40%;
+          height: auto;
+          vertical-align: middle;
+          transition: all .1s ease;
+          &:hover {
+            transform: scale(2);
+            right: 40px;
+            bottom: 25px;
+          }
+        }
+      }
+      .top {
+        text-align: center;
+        color: #fff;
+        padding-top: 4em;
+        transition: all .1s ease;
+      }
+      .second_blcok {
+        position: absolute;
+        border: 1px solid #ccc;
+        right: 0;
+        left: 0;
+        top: -100%;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        transition: all .2s ease;
+        .git {
+          display: block;
+          padding: 1.5em;
+          text-align: center;
+        }
+        .header {
+
+        }
+        .tech{
+          .li_tech {
+            padding: .75em;
+            font-size: .75em;
+            margin: 0 10px;
+            border-bottom: 1px dashed #ccc;
+          }
+        }
+      }
+      .active {
+        top: 0;
+        opacity: 1;
+      }
+      .sb_more {
+        position: absolute;
+        top: 5px;
+        width: 35px;
+        height: 35px;
+        right: 10px;
+        cursor: pointer;
+        transition: all .1s ease;
+        .item_span {
+          position: absolute;
+          top: 25px;
+          opacity: 1;
+          right: 10px;
+          width: 20px;
+          height: 2px;
+          background: #fff;
+          color: #fff;
+          cursor: pointer;
+          transition: all .1s ease;
+          &::before {
+            top: -8px;
+            position: absolute;
+            background: #fff;
+            content: '';
+            width: 20px;
+            height: 2px;
+            transition: all .2s ease-in-out;
+          }
+          &::after {
+            top: 8px;
+            position: absolute;
+            background: #fff;
+            content: '';
+            width: 20px;
+            height: 2px;
+            transition: all .2s ease-in-out;
+          }
+        }
+      }
+      .burger {
+        .item_span {
+          background: 0 0;
+          &::before {
+            transform: rotate(45deg) translate(5px,6px);
+            background: #ff6b2f;
+          }
+          &::after {
+            transform: rotate(-45deg) translate(5px,-6px);
+            background: #ff6b2f;
+          }
+        }
+      }
+    }
+  }
+}
+#contacts {
+  margin-left: 280px;
+  height: auto;
+  overflow: hidden;
+  padding: 2rem 0;
+  background: #fff;
+  .title_section {
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 2rem 0;
+    h2 {
+      padding-bottom: 1rem;
+      color: #ff6b2f;
+      font-size: 1.5625em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+  .content_section {
+    margin-bottom: 50px;
+    overflow: hidden;
+    .contact_wrapp{
+      @include tablet_max {
+        max-height: 650px;
+        margin: 0 auto;
+        width: 450px;
+      }
+      @include mobile_l {
+        width: 340px;
+      }
+      @include mobile_s {
+        width: 285px;
+      }
+      .err_block {
+        display: none;
+        color: red;
+      }
+      .modal_confirm {
+        display: none;
+        text-align: center;
+      }
+      .modal_forms {
+        #my_form {
+          .form_line {
+            margin-bottom: 30px;
+            .form_style {
+              width: 100%;
+              color: #000;
+              border-bottom: 2px solid #000;
+              border-top: none;
+              border-left: none;
+              border-right: none;
+              padding: 10px 0;
+              outline: 0;
+            }
+          }
+          .btn_modal {
+            background: #ff6b2f;
+            color: #fff;
+            padding: 12px 25px;
+            display: inline-block;
+            line-height: 1;
+            border: none;
+            float: right;
+            outline: 0;
+            &:hover {
+              background: #d92d30;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 //protocard
 .ui-photocard {
@@ -1406,6 +1746,13 @@ body{
   @include bsh(0px 0px 20px 0px rgba(0, 0, 0, 0.75));
   @include transition($default);
   filter: sepia(100%);
+  @include mobile_l {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 95%;
+    visibility: hidden;
+  }
   &__header {
     padding: 10px 0;
     background: #fff;
@@ -1415,5 +1762,6 @@ body{
 .active_photocard {
   top: 20px;
   opacity: 1;
+  visibility: visible;
 }
 

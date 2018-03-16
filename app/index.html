@@ -15,7 +15,7 @@
     <script src="libs/jquery.bxslider/jquery.bxslider.min.js"></script>
     <script>
         $(document).ready(function(){
-            $('.bx_head').bxSlider({
+            $('.bx_slider').bxSlider({
                 mode: 'horizontal',
                 captions: true,
                 easing: 'easeInOutQuad',
@@ -77,6 +77,7 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="head_block">
+                <div class="content_middle">
                     <div class="head_header">
                         <h4 class="wow fadeIn" data-wow-delay=".3s">Вилков Сергей</h4>
                         <p class="p wow fadeIn" data-wow-delay=".5s">резюме на позицию html-верстальщик /
@@ -85,6 +86,7 @@
                             <p class="go_about">узнать больше</p>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -106,7 +108,7 @@
                     </div>
                     <div class="content_middle">
                         <div class="items_profile">
-                            <div class="col-md-6">
+                            <div class="col-md-6 col-sm-6">
                                 <div class="row">
                                     <ul class="ul_info wow fadeInLeft" data-wow-delay=".8s">
                                         <li class="li_info"><span>Возраст:</span> 30лет</li>
@@ -118,7 +120,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 col-sm-6">
                                 <div class="row">
                                     <div class="main_wr_rel">
                                         <div class="main_wr wow fadeIn" data-wow-delay=".8s">
@@ -239,7 +241,7 @@
                     <div class="content_middle">
                         <div class="ui-opacity">
                             <div class="col-md-4 col-sm-4 col-xs-12">
-                                <div class="ui-grid-effect">
+                                <div class="ui-frames ui-grid-effect">
                                     <img src="img/Cute-Girlnbspfond-ecran-hd3.jpg" alt="" class="ui_grid_img">
                                     <div class="ui-grid-bg">
                                         <div class="ui_grid_header"><h3>Heading here</h3></div>
@@ -248,7 +250,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4 col-xs-12">
-                                <div class="ui-bottom-effiect">
+                                <div class="ui-frames ui-bottom-effiect">
                                     <div class="ui-bottom-left__bg">
                                         <div class="ui-bottom-left__title"><h3>Heading here</h3></div>
                                         <div class="ui-bottom-left__description"><p>Decription</p></div>
@@ -257,7 +259,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4 col-xs-12">
-                                <div class="ui-quadro-center">
+                                <div class="ui-frames ui-quadro-center">
                                     <img src="img/Cute-Girlnbspfond-ecran-hd3.jpg" alt="" class="ui_quadro_img">
                                     <div class="ui-quadro-center__center"></div>
                                 </div>
@@ -266,7 +268,7 @@
                     </div>
                     <div class="content_middle">
                         <div class="ui-menu">
-                           <div class="col-md-4 col-sm-4 col-xs-12">
+                           <div class="col-md-4 col-sm-4">
                                <div class="ui-menu__wrapper four">
                                    <div class="ui-menu__annotation">
                                        <span class="ui-menu__annotation-text">Многоуровневое выпадающее меню с hover-эффектом</span>
@@ -373,30 +375,30 @@
                             <div class="ui-buttons__header">Buttons</div>
                             <div class="ui-buttons__quadro">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <div class="col-md-6 col-sm-4">
+                                    <div class="col-md-6">
                                         <div class="button-sev">
                                             <div class="button-sev__top">button</div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-sm-4">
+                                    <div class="col-md-6">
                                         <div class="button_ei">button</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="ui-circle-buttons">
-                                <div class="col-md-3">
-                                    <div class="cir_one"></div>
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="cir cir_one"></div>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="cir_two"></div>
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="cir cir_two"></div>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="cir_three">
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="cir cir_three">
                                         <div class="cir_th_border"></div>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="cir_four">
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="cir cir_four">
                                         <div class="cir_four_border"></div>
                                     </div>
                                 </div>
@@ -407,95 +409,94 @@
             </div>
         </div>
     </section>
-    <section class="hireme">
+    <section class="cv_sections hireme">
         <div class="my_tragets">Мои цели на ближайшую перспективу</div>
-        <ul class="bxslider">
+        <ul class="bx_slider">
             <li>Изучение и практика <span class="yellow">нативного JS</span></li>
             <li><span class="yellow">Unit-тестирование</span> кода</li>
-            <li>Использование в работе JS-фреймфорков <span class="yellow">Angular</span> и <span class="yellow">Coffee Script</span></li>
-            <li>Изучение программы <span class="yellow">Sketch</span></li>
-            <li>Углубленная практика <span class="yellow">адаптивной верски</span></li>
-            <li>Изучение формата <span class="yellow">SVG</span></li>
+            <li>Использование в работе JS-фреймфорков <span class="yellow">Vue</span> и/или <span class="yellow">React</span></li>
         </ul>
     </section>
-<!--     <section class="cv_sections" id="my_works">
+    <section class="cv_sections" id="my_works">
         <div class="col-md-12">
             <div class="row">
                 <div class="my_w_header">
                     <h2>Мои работы</h2>
                 </div>
-                <div class="example_wrapp">
-                    <div class="col-md-4 col-sm-4">
-                        <div class="main_ex">
-                            <a href="https://grandpovar.ru" target="_blank">
-                                <img src="img/gp.jpg" alt="photo">
-                            </a>
-                            <div class="top">
-                                <p class="header">Grandpovar</p>
-                                <span class="desc">Энциклопедия рецептов</span>
-                            </div>
-                            <div class="second_blcok">
-                                <a href="https://github.com/svilkov87/povar" class="git">github</a>
-                                <div class="header"></div>
-                                <ul class="tech">
-                                    <li class="li_tech">html5, bootstrap (grid only)</li>
-                                    <li class="li_tech">css3</li>
-                                    <li class="li_tech">JS (Jquery)</li>
-                                    <li class="li_tech">php, mysql (pdo)</li>
-                                </ul>
-                            </div>
-                            <div class="sb_more">
-                                <div class="item_span"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="main_ex">
-                            <a href="http://ketra-lp.svtest.ru/">
-                                <img src="img/ketra.jpg" alt="photo">
-                            </a>
-                            <div class="top">
-                                <p class="header">Ketra LP</p>
-                                <span class="desc">Landing Page</span>
-                            </div>
-                            <div class="second_blcok">
-                                <a href="https://github.com/svilkov87/ketra" class="git">github</a>
-                                <div class="header"></div>
-                                <ul class="tech">
-                                    <li class="li_tech">html5, bootstrap (grid only)</li>
-                                    <li class="li_tech">css3, sass ( scss )</li>
-                                    <li class="li_tech">JS (Jquery)</li>
-                                    <li class="li_tech">php, mysql (pdo)</li>
-                                    <li class="li_tech">gulp</li>
-                                </ul>
-                            </div>
-                            <div class="sb_more">
-                                <div class="item_span"></div>
+                <div class="content_middle">
+                    <div class="example_wrapp">
+                        <div class="col-md-4 col-sm-4">
+                            <div class="main_ex">
+                                <a href="https://grandpovar.ru" target="_blank">
+                                    <img src="img/gp.jpg" alt="photo">
+                                </a>
+                                <div class="top">
+                                    <p class="header">Grandpovar</p>
+                                    <span class="desc">Энциклопедия рецептов</span>
+                                </div>
+                                <div class="second_blcok">
+                                    <a href="https://github.com/svilkov87/povar" class="git">github</a>
+                                    <div class="header"></div>
+                                    <ul class="tech">
+                                        <li class="li_tech">html5, bootstrap (grid only)</li>
+                                        <li class="li_tech">css3</li>
+                                        <li class="li_tech">JS (Jquery)</li>
+                                        <li class="li_tech">php, mysql (pdo)</li>
+                                    </ul>
+                                </div>
+                                <div class="sb_more">
+                                    <div class="item_span"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="main_ex">
-                            <a href="http://rbrick-nn.svtest.ru/">
-                                <img src="img/rbr.jpg" alt="photo">
-                            </a>
-                            <div class="top">
-                                <p class="header">Русский Кирпич</p>
-                                <span class="desc">Оптово-розничная продажа строительних материалов</span>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="main_ex">
+                                <a href="http://ketra-lp.svtest.ru/">
+                                    <img src="img/ketra.jpg" alt="photo">
+                                </a>
+                                <div class="top">
+                                    <p class="header">Ketra LP</p>
+                                    <span class="desc">Landing Page</span>
+                                </div>
+                                <div class="second_blcok">
+                                    <a href="https://github.com/svilkov87/ketra" class="git">github</a>
+                                    <div class="header"></div>
+                                    <ul class="tech">
+                                        <li class="li_tech">html5, bootstrap (grid only)</li>
+                                        <li class="li_tech">css3, sass ( scss )</li>
+                                        <li class="li_tech">JS (Jquery)</li>
+                                        <li class="li_tech">php, mysql (pdo)</li>
+                                        <li class="li_tech">gulp</li>
+                                    </ul>
+                                </div>
+                                <div class="sb_more">
+                                    <div class="item_span"></div>
+                                </div>
                             </div>
-                            <div class="second_blcok">
-                                <a href="https://github.com/svilkov87/rbrick" class="git">github</a>
-                                <div class="header"></div>
-                                <ul class="tech">
-                                    <li class="li_tech">html5, bootstrap (grid only)</li>
-                                    <li class="li_tech">css3, sass ( scss )</li>
-                                    <li class="li_tech">JS (Jquery)</li>
-                                    <li class="li_tech">php, mysql (pdo)</li>
-                                    <li class="li_tech">gulp</li>
-                                </ul>
-                            </div>
-                            <div class="sb_more">
-                                <div class="item_span"></div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="main_ex">
+                                <a href="http://rbrick-nn.svtest.ru/">
+                                    <img src="img/rbr.jpg" alt="photo">
+                                </a>
+                                <div class="top">
+                                    <p class="header">Русский Кирпич</p>
+                                    <span class="desc">Оптово-розничная продажа строительних материалов</span>
+                                </div>
+                                <div class="second_blcok">
+                                    <a href="https://github.com/svilkov87/rbrick" class="git">github</a>
+                                    <div class="header"></div>
+                                    <ul class="tech">
+                                        <li class="li_tech">html5, bootstrap (grid only)</li>
+                                        <li class="li_tech">css3, sass ( scss )</li>
+                                        <li class="li_tech">JS (Jquery)</li>
+                                        <li class="li_tech">php, mysql (pdo)</li>
+                                        <li class="li_tech">gulp</li>
+                                    </ul>
+                                </div>
+                                <div class="sb_more">
+                                    <div class="item_span"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -535,7 +536,7 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
 </div>
 <div class="ui-photocard">
