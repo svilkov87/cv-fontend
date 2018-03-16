@@ -1153,94 +1153,99 @@ body{
         font-size: 30px;
         text-transform: uppercase;
       }
-      .button-sev{
-        position: relative;
-        display: block;
-        height: 60px;
-        line-height: 60px;
-        width: 230px;
-        margin: 0 auto;
-        color: #000;
-        cursor: pointer;
-        text-align: center;
-        float: right;
-        border: 3px solid red;
+      .ui-buttons__quadro{
         overflow: hidden;
-        outline: none;
-        transition: color 0.25s;
-        // transition-delay: 1.3s;
-        &::before,
-        &::after {
-          box-sizing: inherit;
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          border: 3px solid transparent;
-          width: 0;
-          height: 0;
-        }
-        &::before {
-          top: 0;
-          left: 0;
-        }
-        &::after {
-          bottom: 0;
-          right: 0;
-        }
-        &:hover {
-          color: $cyan;
-          border: none;
-        }
-        &:hover::before,
-        &:hover::after {
-          width: 100%;
-          height: 100%;
-        }
+        padding: 25px 0;
+        margin-bottom: 45px;
+        .button-sev{
+          position: relative;
+          display: block;
+          height: 60px;
+          line-height: 60px;
+          width: 230px;
+          margin: 0 auto;
+          color: #000;
+          cursor: pointer;
+          text-align: center;
+          float: right;
+          border: 3px solid red;
+          overflow: hidden;
+          outline: none;
+          transition: color 0.25s;
+          // transition-delay: 1.3s;
+          &::before,
+          &::after {
+            box-sizing: inherit;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid transparent;
+            width: 0;
+            height: 0;
+          }
+          &::before {
+            top: 0;
+            left: 0;
+          }
+          &::after {
+            bottom: 0;
+            right: 0;
+          }
+          &:hover {
+            color: $cyan;
+            border: none;
+          }
+          &:hover::before,
+          &:hover::after {
+            width: 100%;
+            height: 100%;
+          }
 
-        &:hover::before {
-          border-top-color: $cyan;
-          border-right-color: $cyan;
-          transition:
+          &:hover::before {
+            border-top-color: $cyan;
+            border-right-color: $cyan;
+            transition:
             width 0.25s ease-out,
             height 0.25s ease-out 0.25s;
-        }
-        &:hover::after {
-          border-bottom-color: $cyan;
-          border-left-color: $cyan;
-          transition:
+          }
+          &:hover::after {
+            border-bottom-color: $cyan;
+            border-left-color: $cyan;
+            transition:
             border-color 0s ease-out 0.5s,
             width 0.25s ease-out 0.5s,
             height 0.25s ease-out 0.75s;
-        }
-      }
-      .button_ei {
-        float: left;
-        background: $alter_bg;
-        display: block;
-        line-height: 60px;
-        width: 230px;
-        margin: 0 auto;
-        color: #fff;
-        cursor: pointer;
-        text-align: center;
-        float: left;
-        @keyframes loader {
-          25% {
-            background: $curcle_buttons_flash;
-            transform: scale(1.5);
-            box-shadow: -1px 15px 30px 0px rgba(50, 50, 50, 0.20);
-          }
-          50% {
-            transform: scale(.95);
-          }
-          80% {
-            transform: scale(1);
           }
         }
-        &:hover {
-          animation: loader .6s ease;
-          animation-delay: .1s;
+        .button_ei {
+          float: left;
+          background: $alter_bg;
+          display: block;
+          line-height: 60px;
+          width: 230px;
+          margin: 0 auto;
+          color: #fff;
+          cursor: pointer;
+          text-align: center;
+          float: left;
+          @keyframes loader {
+            25% {
+              background: $curcle_buttons_flash;
+              transform: scale(1.5);
+              box-shadow: -1px 15px 30px 0px rgba(50, 50, 50, 0.20);
+            }
+            50% {
+              transform: scale(.95);
+            }
+            80% {
+              transform: scale(1);
+            }
+          }
+          &:hover {
+            animation: loader .6s ease;
+            animation-delay: .1s;
+          }
         }
       }
       .ui-circle-buttons {
@@ -1258,7 +1263,7 @@ body{
           @keyframes cricle_flash {
             25% {
               transform: scale(1.5);
-              background: #bbe3f3;
+              background: $curcle_buttons_flash_hover;
               box-shadow: 0 2px 14px 0 rgba(0,0,0,.4);
             }
             50% {
@@ -1271,6 +1276,105 @@ body{
           &:hover {
             animation: cricle_flash .6s ease;
             animation-delay: .1s;
+          }
+        }
+        .cir_two {
+          background: $curcle_buttons_flash;
+          cursor: pointer;
+          width: 100px;
+          height: 100px;
+          margin: 25px auto;
+          border-radius: 50%;
+          box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
+          transition: all .6s ease;
+          perspective: 500px;
+          @keyframes quadro_flash {
+            25% {
+              background: $curcle_buttons_flash_hover;
+              box-shadow: 0 2px 14px 0 rgba(0,0,0,.4);
+              transform: rotate(70deg);
+              border-radius: 0;
+            }
+            50% {
+              transform: scale(.78);
+            }
+            80% {
+              transform: scale(1);
+            }
+          }
+          &:hover {
+            animation: quadro_flash 1s ease;
+            animation-delay: .1s;
+          }
+        }
+        .cir_three {
+          background: $curcle_buttons_flash;
+          position: relative;
+          cursor: pointer;
+          width: 100px;
+          height: 100px;
+          margin: 25px auto;
+          border-radius: 50%;
+          box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
+          transition: all .2s ease;
+          &:hover {
+            // animation-duration: 2s;
+            // transition-timing-function: cubic-bezier(.1,.9,.9,.1);
+            transform: scale(.85);
+            box-shadow: none;
+          }
+          &:hover .cir_th_border {
+            transform: scale(1.2);
+            opacity: 1;
+          }
+          .cir_th_border {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border: 4px solid rgba(120,188,255,.75);
+            background: 0 0;
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(1);
+            transition: all .2s ease;
+          }
+        }
+        .cir_four {
+          background: $curcle_buttons_flash;
+          cursor: pointer;
+          width: 100px;
+          height: 100px;
+          margin: 25px auto;
+          border-radius: 50%;
+          box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
+          transition: all .5s ease;
+          &:hover .cir_four_border {
+            transform: scale(1.5);
+            opacity: 0;
+            border: 6px solid rgba(120,188,255,.75);
+            transition-delay: .5s;
+            // transition-timing-function: cubic-bezier(.1,.9,.9,.1);
+          }
+          .cir_four_border {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background: 0 0;
+            border-radius: 50%;
+            opacity: 1;
+            transform: scale(1);
+            transition: all .6s ease;
+          }
+          &:hover {
+            transform: scale(.85);
+            transition-timing-function: cubic-bezier(.1,.9,.9,.1);
+            box-shadow: 0 4px 7px 0 rgba(0,0,0,.2);
           }
         }
       }

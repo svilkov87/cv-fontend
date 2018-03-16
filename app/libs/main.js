@@ -330,7 +330,7 @@ $(document).ready( function() {
             $(this).prev().removeClass('previous');
             $sixItems.not($(this)).removeClass('wave');
         }
-        );
+    );
 
     $sixItems.on( 'click', function(){
 
@@ -360,11 +360,7 @@ $(document).ready( function() {
     } );
 
 
-
-
-
-
-
+    // circle buttons
 
     //photocard
     $('.ui-quadro-center').mouseenter( function(){
