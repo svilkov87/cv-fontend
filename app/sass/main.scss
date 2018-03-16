@@ -1164,58 +1164,54 @@ body{
         cursor: pointer;
         text-align: center;
         float: right;
+        border: 3px solid red;
         overflow: hidden;
-        background: #fff;
         outline: none;
-        border: 3px solid $alter_bg;
-        transition: $default ease-in-out;
-        transition-delay: 1.3s;
-        &:hover {
-          background: $alter_bg;
-
-          color: #fff;
-        }
-        &:hover .button-sev__senter{
-          animation: bubble .6s ease-in-out;
-          // -webkit-animation-fill-mode: forwards;
-          // animation-fill-mode: forwards;
-          animation-delay: .1s;
-          animation-duration: 2s;
-          animation-timing-function: cubic-bezier(.15, .1, .2, 1.5);
-        }
-        .button-sev__senter{
-          opacity: 0;
+        transition: color 0.25s;
+        // transition-delay: 1.3s;
+        &::before,
+        &::after {
+          box-sizing: inherit;
+          content: '';
           position: absolute;
-          left: 39%;
-          top: 8%;
-          background: transparent;
-          border: 3px solid $alter_bg;
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          color: #000;
-          line-height: 45px;
-          transform: scale(.5);
-          @keyframes bubble {
-            0{
-              background: $alter_bg;
-            }
-            25% {
-              transform: scale(1.8);
-            }
-            50% {
-              transform: scale(.99);
-              background: #fff;
-            }
-            100% {
-              background: $alter_bg;
-              transform: scale(9);
-              opacity: 1;
-            }
-          }
-          &:hover {
-            opacity: 1;
-          }
+          width: 100%;
+          height: 100%;
+          border: 3px solid transparent;
+          width: 0;
+          height: 0;
+        }
+        &::before {
+          top: 0;
+          left: 0;
+        }
+        &::after {
+          bottom: 0;
+          right: 0;
+        }
+        &:hover {
+          color: $cyan;
+          border: none;
+        }
+        &:hover::before,
+        &:hover::after {
+          width: 100%;
+          height: 100%;
+        }
+
+        &:hover::before {
+          border-top-color: $cyan;
+          border-right-color: $cyan;
+          transition:
+            width 0.25s ease-out,
+            height 0.25s ease-out 0.25s;
+        }
+        &:hover::after {
+          border-bottom-color: $cyan;
+          border-left-color: $cyan;
+          transition:
+            border-color 0s ease-out 0.5s,
+            width 0.25s ease-out 0.5s,
+            height 0.25s ease-out 0.75s;
         }
       }
       .button_ei {
