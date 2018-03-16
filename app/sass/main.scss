@@ -291,15 +291,21 @@ body{
       &:after {
         content: '';
         position: absolute;
-        top: 13px;
-        right: 20px;
-        height: 20px;
-        width: 20px;
-        background: #ccc;
+        top: 20px;
+        right: 24px;
+        width: 10px;
+        height: 10px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(255, 69, 0);
+        border-image: initial;
         border-radius: 50%;
+        transition: all .2s ease-in-out;
       }
       &:hover::after {
         background: $acid_bg;
+        border: none;
+        transform: scale(1.8);
       }
       &:hover {
         box-shadow: 0 0 9px 0 rgba(81,156,253,.35);
